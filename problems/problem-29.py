@@ -12,14 +12,13 @@ def incode_string(inp):
     if l == 1:
         return('1' + inp)
     for i in range(1, l):
-        if i == l - 1:
-            incoded += str(cur_char_count + 1) + cur_char
-        elif inp[i -1] != inp[i]:
+        if inp[i -1] != inp[i]:
             incoded += str(cur_char_count) + cur_char
             cur_char = inp[i]
             cur_char_count = 1
         else:
             cur_char_count += 1
+    incoded += str(cur_char_count) + cur_char
     return incoded
 
 def decode_string(inp):
